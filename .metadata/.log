@@ -7211,3 +7211,12 @@ Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/cocoba
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-08-09 00:50:41.277
 !MESSAGE No repository found at http://dl.bintray.com/testng-team/testng-p2-release/.
+
+!ENTRY org.eclipse.equinox.security 1 0 2024-08-09 01:22:08.381
+!MESSAGE New keyring password generated. 
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-08-09 01:27:59.661
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-08-09 01:27:59.675
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
