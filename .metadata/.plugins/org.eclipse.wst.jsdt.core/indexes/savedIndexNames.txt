@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\lyj\wanted-pre-onboarding-backend\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3235662699.index
+666934960.index
+3529422680.index
+261314433.index
+1192132931.index
+550723386.index
