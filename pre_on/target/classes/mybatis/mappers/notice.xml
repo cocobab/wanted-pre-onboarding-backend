@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mapper.notice">
+
+<!-- 채용공고 목록 및 채용공고 상세페이지를 출력하기 위해 채용공고와 회사 테이블의 컬럼을 합친 것 -->
+	<resultMap type="notiCompanyDTO" id="notiCompanyDTOResult">
+		<result property="noticeId" column="noticeId"/>
+		<result property="companyId" column="companyId"/>
+		<result property="pos" column="pos"/>
+		<result property="money" column="money"/>
+		<result property="contents" column="contents"/>
+		<result property="skill" column="skill"/>
+		
+		<result property="companyName" column="companyName"/>
+		<result property="companyCountry" column="companyCountry"/>
+		<result property="companyLocal" column="companyLocal"/>
+	</resultMap>
+	
+	<!-- 채용공고 등록 관련-->
+	<resultMap type="noticeDTO" id="noticeDTOResult">
+		<result property="noticeId" column="noticeId"/>
+		<result property="companyId" column="companyId"/>
+		<result property="pos" column="pos"/>
+		<result property="money" column="money"/>
+		<result property="contents" column="contents"/>
+		<result property="skill" column="skill"/>
+	</resultMap>	
+	
+	<!-- 채용공고 목록 -->
+	<select id="listNotice" resultMap="notiCompanyDTOResult">
+		<![CDATA[
+			select 
+				noti.noticeid, co.companyname, co.companycountry
+				,co.companylocal, noti.pos, noti.money, noti.skill
+			from company co
+			join notice noti on co.companyId = noti.companyId
+		]]>
+	</select>
+	
+	<!-- 채용공고 등록 -->
+	<insert id="addNotice" parameterType="noticeDTO">
+		<![CDATA[
+			insert into notice values(notice_seq.nextval,#{companyId},#{pos},#{money},#{contents},#{skill})
+		]]>
+	</insert>
+	
+	<!-- 채용공고 상세 -->
+	<select id="selectDetail" resultMap="notiCompanyDTOResult" parameterType="int">
+		<![CDATA[
+			select 
+				noti.noticeid, co.companyname, co.companycountry
+				,co.companylocal, noti.pos, noti.money, noti.skill
+				,noti.contents, co.companyId
+			from company co
+			join notice noti on co.companyId = noti.companyId
+			where noti.noticeId=#{noticeId}
+		]]>	
+	</select>
+	
+	<!-- 채용공고 삭제 -->
+	<delete id="deleteNotice" parameterType="int">
+		<![CDATA[
+			delete 
+			from notice 
+			where notice.noticeid=#{noticeId} 
+		]]>
+	</delete>
+	
+	<!-- 채용공고 수정 -->
+	<update id="modNotice" parameterType="noticeDTO">
+		<![CDATA[
+			update notice set pos=#{pos}, money=#{money}, contents=#{contents}, skill=#{skill}
+			where notice.noticeId=#{noticeId}
+		]]>
+	</update>
+	
+
+</mapper>

@@ -1,5 +1,11 @@
 package com.spring.preon.dto;
 
-public class CompanyDTO {
+import lombok.Data;
 
+@Data
+public class CompanyDTO {
+	String companyName;
+	String companyId;
+	String companyCountry;
+	String companyLocal;
 }
