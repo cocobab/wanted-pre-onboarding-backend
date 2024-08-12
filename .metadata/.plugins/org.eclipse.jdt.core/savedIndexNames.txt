@@ -26,7 +26,6 @@ INDEX VERSION 1.131+C:\Users\lyj\wanted-pre-onboarding-backend\.metadata\.plugin
 4238406966.index
 2063932493.index
 2760991305.index
-190825412.index
 18146676.index
 3461968241.index
 1756528284.index

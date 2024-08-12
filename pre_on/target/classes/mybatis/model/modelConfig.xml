@@ -9,9 +9,7 @@
 	
 	
 	<typeAliases>
-		<typeAlias type="com.spring.preon.dto.Test1" alias="test1"/>
 		<typeAlias type="com.spring.preon.dto.NoticeDTO" alias="noticeDTO"/>
-		<typeAlias type="com.spring.preon.dto.CompanyDTO" alias="companyDTO"/>
 		<typeAlias type="com.spring.preon.dto.NotiCompanyDTO" alias="notiCompanyDTO"/>
 	</typeAliases>
 </configuration>
